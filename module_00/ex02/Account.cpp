@@ -34,7 +34,7 @@ void	Account::displayAccountsInfos(void)
 	std::cout << "accounts:" << Account::_nbAccounts << ";";
 	std::cout << "total:" << Account::_totalAmount << ";";
 	std::cout << "deposits:" << Account::_totalNbDeposits << ";";
-	std::cout << "withdrawals: " << Account::_totalNbWithdrawals << std::endl;
+	std::cout << "withdrawals:" << Account::_totalNbWithdrawals << std::endl;
 
 }
 //*******************************************//
@@ -79,7 +79,7 @@ void    Account::makeDeposit(int deposit)
 	Account::_totalAmount += deposit;
 	std::cout << ";deposit:" << deposit;
 	std::cout << ";amount:" << this->_amount;
-	std::cout << ";nb_deposit:" << this->_nbDeposits << std::endl;
+	std::cout << ";nb_deposits:" << this->_nbDeposits << std::endl;
 }
 
 bool    Account::makeWithdrawal(int withdrawal)
@@ -88,7 +88,7 @@ bool    Account::makeWithdrawal(int withdrawal)
 	std::cout << "index:" << this->_accountIndex;
 	std::cout << ";p_amount:" << this->_amount;
 	if (withdrawal > this->_amount)
-		std::cout << ";withdrawals:refused" << std::endl;
+		std::cout << ";withdrawal:refused" << std::endl;
 	else
 	{
 		this->_nbWithdrawals++;
@@ -150,7 +150,7 @@ void	Account::_displayTimestamp( void )
 	char		buff[20];
 	
 	t_struct = *localtime(&now);
-	strftime(buff, sizeof(buff), "[%Y%m%d_%H%M%S]", &t_struct);
+	strftime(buff, sizeof(buff), "[%Y%m%d_%H%M%S] ", &t_struct);
 	std::cout << buff;
 
 
