@@ -23,16 +23,14 @@ $(NAME):
 	@echo =================
 	@echo =================
 	@echo =================
-	@echo EXECUTABLE READY !!!
+	@echo "$(YELLOW)EXECUTABLE READY !!!"
 
 clean:
 	@$(RM) $(NAME)
-#	@printf "$(YELLOW)    - Executable removed.\n $(RESET)"
-	@echo EXECUTABLE REMOVED 
+	@echo "$(YELLOW)EXECUTABLE REMOVED" 
 
 fclean:
 	@$(RM) $(NAME)
-#	@printf "$(YELLOW)    - Executable removed.\n"
-	@echo EXECUTABLE REMOVED
+	@echo "$(YELLOW)EXECUTABLE REMOVED"
 
 re: clean all

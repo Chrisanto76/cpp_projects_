@@ -14,17 +14,16 @@ RESET		=	\33[0m
 all: $(NAME)
 
 $(NAME): 
-	@printf "$(YELLOW) 	- Compiling $(NAME)...\n"
+	@echo "$(YELLOW)- Compiling $(NAME)...\n"
 	@ $(CC) $(FLAGS) megaphone.cpp -o $(NAME)
-	@printf "$(YELLOW)    - Executable ready.\n"
+	@echo "$(YELLOW)- Executable ready.\n"
 
 clean:
 	@$(RM) $(NAME)
-	@printf "$(YELLOW)    - Executable removed.\n $(RESET)"
-	@echo =========================
+	@echo "$(YELLOW)- Executable removed.\n $(RESET)"
 
 fclean:
 	@$(RM) $(NAME)
-	@printf "$(YELLOW)    - Executable removed.\n"
+	@echo "$(YELLOW)- Executable removed.\n"
 
 re: clean all
