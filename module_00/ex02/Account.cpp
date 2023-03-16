@@ -15,7 +15,7 @@ int     Account::getNbAccounts(void)
 
 int     Account::getTotalAmount(void)
 {
-	return (_totalAmount);uwcbwc
+	return (_totalAmount);
 }
 
 int     Account::getNbDeposits(void)
@@ -120,13 +120,41 @@ void	Account::displayStatus( void ) const
 //               TIME TREATMENT              //
 //*******************************************//
 
-void	Account::_displayTimestamp( void )
+/*void	Account::_displayTimestamp( void )
 {
-	static	std::time_t time_now = std::time(nullptr);
+	static	std::time_t time_now = std::time(NULL);
 	std::cout << "[" << std::put_time(std::localtime(&time_now), "%Y%m%d_%H%M%S") << "] ";
 
-}
+}*/
 
+/*void	Account::_displayTimestamp( void )
+{
+	std::time_t		timestamp = std::time(0);
+	tm					*time = localtime(&timestamp);
+	std::cout << "["
+					<< time->tm_year + 1900
+					<< time->tm_mon
+					<< time->tm_mday
+					<< "_"
+					<< time->tm_hour
+					<< time->tm_min
+					<< time->tm_sec
+					<< "] ";
+					
+}*/
+
+void	Account::_displayTimestamp( void )
+{
+	time_t	now = time(0);
+	struct tm	t_struct;
+	char		buff[20];
+	
+	t_struct = *localtime(&now);
+	strftime(buff, sizeof(buff), "[%Y%m%d_%H%M%S]", &t_struct);
+	std::cout << buff;
+
+
+}
 //*******************************************//
 //               STATICS    VAR              //
 //*******************************************//
