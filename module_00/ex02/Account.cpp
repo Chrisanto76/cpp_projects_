@@ -13,7 +13,7 @@ int     Account::getNbAccounts(void)
 
 int     Account::getTotalAmount(void)
 {
-	return (_totalAmount);
+	return (_totalAmount);uwcbwc
 }
 
 int     Account::getNbDeposits(void)
