@@ -21,11 +21,11 @@ $(NAME):
 	@echo =================
 	@echo =================
 	@echo =================
-	@echo "$(YELLOW)EXECUTABLE READY !!!"
+	@echo EXECUTABLE READY !!!
 
 clean:
 	@$(RM) $(NAME)
-	@echo "$(YELLOW)EXECUTABLE REMOVED"
+	@echo  EXECUTABLE REMOVED
 
 
 fclean:
