@@ -4,9 +4,9 @@ void randomChump( std::string name );
 
 int     main(void)
 {
-    Zombie *heapZombie = newZombie("john");
+    Zombie *heapZombie = newZombie("john:");
     heapZombie->announce();
     delete heapZombie;
-    randomChump("toto");
+    randomChump("toto:");
     return (0);
 }
