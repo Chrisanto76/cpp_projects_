@@ -18,7 +18,7 @@ int main(void)
 {
     Zombie  *zombies = zombieHorde(N, "Rodolfo ");
 
-    for (size_t i = 0; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
         zombies[i].announce();
     }
