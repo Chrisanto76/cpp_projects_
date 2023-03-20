@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apoure <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 10:32:03 by apoure            #+#    #+#             */
-/*   Updated: 2023/03/20 10:32:05 by apoure           ###   ########.fr       */
+/*   Created: 2023/03/20 10:29:48 by apoure            #+#    #+#             */
+/*   Updated: 2023/03/20 10:29:51 by apoure           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "zombie.hpp"
 
-int main(int ac, char **av)
+#define N 10
+
+int main(void)
 {
-    if (ac == 1)
+    Zombie  *zombies = zombieHorde(N, "Rodolfo ");
+
+    for (size_t i = 0; i < N; i++)
     {
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-        return (0);
+        zombies[i].announce();
     }
-    for (int i = 1; i < ac; i++)
-    {
-        std::string str = std::string(av[i]);
-        for (size_t l = 0; l < str.size(); l++)
-            std::cout << (char)std::toupper(str[l]);
-    }
-    std::cout << std::endl;
+
+    delete [] zombies;
     return (0);
 }
-

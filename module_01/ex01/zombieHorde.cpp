@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apoure <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 10:32:03 by apoure            #+#    #+#             */
-/*   Updated: 2023/03/20 10:32:05 by apoure           ###   ########.fr       */
+/*   Created: 2023/03/20 10:29:21 by apoure            #+#    #+#             */
+/*   Updated: 2023/03/20 10:29:23 by apoure           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "zombie.hpp"
 
-int main(int ac, char **av)
+/* incrementation of N zombies with for loop*/
+
+Zombie* zombieHorde( int N, std::string name )
 {
-    if (ac == 1)
+    Zombie  *zombies = new Zombie[N];
+    for (int i = 0; i < N; i++)
     {
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-        return (0);
+        zombies[i].setZombieName(name);
     }
-    for (int i = 1; i < ac; i++)
-    {
-        std::string str = std::string(av[i]);
-        for (size_t l = 0; l < str.size(); l++)
-            std::cout << (char)std::toupper(str[l]);
-    }
-    std::cout << std::endl;
-    return (0);
+    return (zombies);
 }
-
