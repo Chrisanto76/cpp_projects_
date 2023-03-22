@@ -1,32 +1,36 @@
-NAME	= zombie
+NAME			= attack
 
-SRC		= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRC_FILES 		= Weapon.cpp HumanA.cpp HumanB.cpp main.cpp
+SRC_DIR			= ./src/
+INC_DIR			= ./includes/
+OBJ_DIR			= ./obj/
 
-CC		= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98
-RM		= rm -rf
+OBJ				= $(addprefix $(SRC_DIR), $(SRC_FILES))
+SRC				= $(addprefix $(OBJ_DIR), $(SRC_FILES:.cpp=.o))
 
-
-.PHONY: all clean re
+CXX				= c++
+CFLAGS			= -Wall -Werror -Wextra
+CXXFLAGS		= -std=c++98
 
 all: $(NAME)
 
-$(NAME): 
-	@echo --- COMPILING ---
-	@ $(CC) $(FLAGS) $(SRC)  -o $(NAME)
-	@echo =================
-	@echo =================
-	@echo =================
-	@echo =================
-	@echo EXECUTABLE READY !!!
+$(NAME): $(OBJ)
+		$(CXX) $(CXXFLAGS) $(CFLAGS) $(OBJ) -o $(NAME)
+
+$(OBJ_DIR)%.o : $(SRC_DIR)%.cpp
+		@mkdir -p $(OBJ_DIR)
+		$(CXX) $(CXXFLAGS) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
 
 clean:
-	@$(RM) $(NAME)
-	@echo  EXECUTABLE REMOVED
-
+		@rm -rfv $(OBJ)
+		rmdir $(OBJ_DIR)
 
 fclean:
-	@$(RM) $(NAME)
-	@echo  EXECUTABLE REMOVED
+		@rm -rfv $(NAME)
 
-re: clean all
+re: fclean all
+
+run: $(NAME)
+		@./$(NAME)
+
+.PHONY: run re fclean clean all
