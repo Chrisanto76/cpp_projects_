@@ -4,17 +4,21 @@
 # include <iostream>
 # include <string>
 
-class   Weapon {
-	private:
-			std::string		_type;
+# define EGGPLANT "\U0001F346";
+# define WRENCH "\U0001F527";
 
-	public:
+class	Weapon 
+{
+		private:
+			std::string			_type;
+		public:
 			Weapon(std::string type);
 			~Weapon(void);
 
-			const std::string&	getType(void) const;
-			void				setType(std::string new_Type);
-
+			const std::string	&getType(void) const;
+			void				setType(std::string new_type);
 };
+
+
 
 #endif /* WEAPON_HPP */

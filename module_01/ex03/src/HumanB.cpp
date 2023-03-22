@@ -5,13 +5,14 @@
 
 HumanB::HumanB(std::string _name):_name(_name), weapon(NULL)
 {
-    std::cout << "constructor called" << std::endl;
+    std::cout << "constructor HumanB called" << std::endl;
+    std::cout << "=========================" << std::endl;
     return;
 }
 //destructor
 HumanB::~HumanB(void)
 {
-    std::cout << "desructor called" << std::endl;
+    std::cout << "destructor HumanB called" << std::endl;
     return;
 }
 

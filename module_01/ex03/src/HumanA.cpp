@@ -3,13 +3,14 @@
 //initialisation list of HumanA constructor
 HumanA::HumanA(std::string name, Weapon &Weapon):_name(name), Weapon_referency(Weapon)
 {
-    std::cout << "constructor called" << std::endl;
+    std::cout << "constructor HumanA called" << std::endl;
+    std::cout << "=========================" << std::endl;
     return;
 }
 //destructor
 HumanA::~HumanA(void)
 {
-    std::cout << "desructor called" << std::endl;
+    std::cout << "destructor HumanA called" << std::endl;
     return;
 }
 
